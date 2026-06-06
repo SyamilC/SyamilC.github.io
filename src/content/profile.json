@@ -1,0 +1,27 @@
+{
+  "profile": {
+    "name": "Syamil Asyraf Bin Mohd Ali Jaafar",
+    "shortName": "Syamil Asyraf",
+    "primaryRole": "Software Engineer",
+    "secondaryRoles": ["Game Development", "Graphic Design", "Creative Systems"],
+    "email": "syamilasyrafmaj@gmail.com",
+    "github": "https://github.com/SyamilC",
+    "location": "Universiti Malaya, Malaysia",
+    "headline": "Software engineering student at Universiti Malaya building practical apps, browser games, simulations, and clear digital interfaces.",
+    "summary": "My portfolio starts with software engineering: structured products, maintainable code, user flows, and testing. Around that core, I explore games, simulations, visuals, and multimedia work as supporting strengths."
+  },
+  "stats": [
+    {
+      "value": "Software Engineering",
+      "label": "Bachelor of Computer Science, Universiti Malaya"
+    },
+    {
+      "value": "7",
+      "label": "Primary projects linked to GitHub and itch.io"
+    },
+    {
+      "value": "GD",
+      "label": "Graphic design gallery sourced from local work"
+    }
+  ]
+}

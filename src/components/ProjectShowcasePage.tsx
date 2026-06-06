@@ -1,5 +1,5 @@
 import { projectImages } from "../data/assetManifest";
-import { profile, projects } from "../data/portfolio";
+import { profile, projects, siteCopy } from "../data/portfolio";
 
 type ProjectShowcasePageProps = {
   slug: string;
@@ -12,12 +12,12 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
     return (
       <main className="project-page">
         <a className="back-link" href="#work">
-          Back to work
+          {siteCopy.projectPage.backLink}
         </a>
         <section className="project-hero project-hero-compact">
-          <p className="eyebrow">Project not found</p>
-          <h1>This showcase does not exist yet.</h1>
-          <p>Use the work section to open one of the prepared project pages.</p>
+          <p className="eyebrow">{siteCopy.projectPage.notFoundEyebrow}</p>
+          <h1>{siteCopy.projectPage.notFoundTitle}</h1>
+          <p>{siteCopy.projectPage.notFoundBody}</p>
         </section>
       </main>
     );
@@ -31,7 +31,7 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
   return (
     <main className="project-page">
       <a className="back-link" href="#work">
-        Back to work
+        {siteCopy.projectPage.backLink}
       </a>
 
       <section className="project-hero">
@@ -43,21 +43,21 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
 
         <aside className="project-facts" aria-label={`${project.title} facts`}>
           <div className="primary-project-link">
-            <span>Main project link</span>
+            <span>{siteCopy.projectPage.mainProjectLink}</span>
             <a href={project.primaryLink.href} target="_blank" rel="noreferrer">
               {project.primaryLink.label}
             </a>
           </div>
           <div>
-            <span>Role</span>
+            <span>{siteCopy.projectPage.role}</span>
             <strong>{project.role}</strong>
           </div>
           <div>
-            <span>Status</span>
+            <span>{siteCopy.projectPage.status}</span>
             <strong>{project.status}</strong>
           </div>
           <div>
-            <span>Year</span>
+            <span>{siteCopy.projectPage.year}</span>
             <strong>{project.year}</strong>
           </div>
         </aside>
@@ -66,8 +66,10 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
       {images.length > 0 ? (
         <section className="showcase-gallery" aria-labelledby="showcase-gallery-heading">
           <div className="showcase-gallery-head">
-            <p className="eyebrow">Visual proof</p>
-            <h2 id="showcase-gallery-heading">{project.title} screenshots</h2>
+            <p className="eyebrow">{siteCopy.projectPage.visualProof}</p>
+            <h2 id="showcase-gallery-heading">
+              {project.title} {siteCopy.projectPage.screenshotsSuffix}
+            </h2>
           </div>
           <div className="showcase-image-grid">
             {images.map((image, index) => (
@@ -81,7 +83,7 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
       ) : null}
 
       <section className="showcase-note showcase-note-wide">
-        <p className="card-kicker">Practical focus</p>
+        <p className="card-kicker">{siteCopy.projectPage.practicalFocus}</p>
         <h2>{project.practicalFocus}</h2>
         <ul className="proof-list">
           {project.proofPoints.map((point) => (
@@ -91,13 +93,13 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
       </section>
 
       <section className="project-detail-grid" aria-label={`${project.title} details`}>
-        <DetailPanel title="What To Look At" items={project.features} />
-        <DetailPanel title="How It Was Framed" items={project.process} />
-        <DetailPanel title="Next Improvements" items={project.nextSteps} />
+        <DetailPanel title={siteCopy.projectPage.detailPanels.features} items={project.features} />
+        <DetailPanel title={siteCopy.projectPage.detailPanels.process} items={project.process} />
+        <DetailPanel title={siteCopy.projectPage.detailPanels.nextSteps} items={project.nextSteps} />
       </section>
 
       <section className="tool-panel" aria-label={`${project.title} stack`}>
-        <p className="card-kicker">Tools and stack</p>
+        <p className="card-kicker">{siteCopy.projectPage.toolsAndStack}</p>
         <ul className="chip-list">
           {project.stack.map((tool) => (
             <li key={tool}>{tool}</li>
@@ -110,14 +112,14 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
           {project.primaryLink.label}
         </a>
         <a className="button button-secondary" href={`mailto:${profile.email}?subject=${project.title}`}>
-          Ask me about this project
+          {siteCopy.projectPage.askProject}
         </a>
       </section>
 
       {relatedProjects.length > 0 ? (
         <section className="related-projects" aria-labelledby="related-heading">
-          <p className="eyebrow">Same category</p>
-          <h2 id="related-heading">Related showcases</h2>
+          <p className="eyebrow">{siteCopy.projectPage.relatedEyebrow}</p>
+          <h2 id="related-heading">{siteCopy.projectPage.relatedTitle}</h2>
           <div className="related-grid">
             {relatedProjects.map((related) => (
               <a href={`#/projects/${related.slug}`} key={related.slug}>

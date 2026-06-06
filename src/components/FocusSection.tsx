@@ -1,13 +1,13 @@
-import { focusAreas } from "../data/portfolio";
+import { focusAreas, siteCopy } from "../data/portfolio";
 import { SectionHeading } from "./SectionHeading";
 
 export function FocusSection() {
   return (
     <section className="page-section about-section" id="about">
       <SectionHeading
-        eyebrow="About me"
-        title="Software engineering is the main track. Creative work sharpens the edges."
-        summary="The structure below makes the hierarchy clear: software engineering first, then the smaller creative lanes that support how I think, prototype, communicate, and ship."
+        eyebrow={siteCopy.sections.about.eyebrow}
+        title={siteCopy.sections.about.title}
+        summary={siteCopy.sections.about.summary}
       />
 
       <div className="focus-grid">

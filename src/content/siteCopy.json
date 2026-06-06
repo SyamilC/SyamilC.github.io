@@ -1,0 +1,77 @@
+{
+  "nav": [
+    { "label": "Work", "href": "#work" },
+    { "label": "Design", "href": "#design" },
+    { "label": "Skills", "href": "#skills" },
+    { "label": "About", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "hero": {
+    "eyebrow": "Hi! I am",
+    "primaryAction": "View project categories",
+    "secondaryAction": "Contact me",
+    "briefAriaLabel": "Portfolio direction",
+    "briefKicker": "Portfolio focus",
+    "briefTitle": "Practical builds first. Creative range second.",
+    "statsAriaLabel": "Portfolio signals"
+  },
+  "sections": {
+    "work": {
+      "eyebrow": "Selected work",
+      "title": "Projects grouped by category, linked to the real builds.",
+      "summary": "Each card opens its showcase page. The showcase page makes the external GitHub or itch.io link the main action, then adds local screenshots when available."
+    },
+    "design": {
+      "eyebrow": "Graphic design",
+      "title": "A gallery of visual work.",
+      "summary": "This gallery is generated from the images in src/assets/GD. Add more designs to that folder and they will appear here automatically."
+    },
+    "skills": {
+      "eyebrow": "Technical inventory",
+      "title": "Tools I can connect to visible work.",
+      "summary": "The skill list is grouped by how the portfolio is meant to grow: source code, app platforms, game systems, and visual production."
+    },
+    "about": {
+      "eyebrow": "About me",
+      "title": "Software engineering is the main track. Creative work sharpens the edges.",
+      "summary": "The structure below makes the hierarchy clear: software engineering first, then the smaller creative lanes that support how I think, prototype, communicate, and ship."
+    },
+    "timeline": {
+      "eyebrow": "Resume signals",
+      "title": "Education, events, and leadership threads.",
+      "summary": "A compact timeline built from your resume, with the public-facing details that matter most for a portfolio audience."
+    }
+  },
+  "projectCard": {
+    "openShowcase": "Open showcase"
+  },
+  "projectPage": {
+    "backLink": "Back to work",
+    "notFoundEyebrow": "Project not found",
+    "notFoundTitle": "This showcase does not exist yet.",
+    "notFoundBody": "Use the work section to open one of the prepared project pages.",
+    "mainProjectLink": "Main project link",
+    "role": "Role",
+    "status": "Status",
+    "year": "Year",
+    "visualProof": "Visual proof",
+    "screenshotsSuffix": "screenshots",
+    "practicalFocus": "Practical focus",
+    "detailPanels": {
+      "features": "What To Look At",
+      "process": "How It Was Framed",
+      "nextSteps": "Next Improvements"
+    },
+    "toolsAndStack": "Tools and stack",
+    "askProject": "Ask me about this project",
+    "relatedEyebrow": "Same category",
+    "relatedTitle": "Related showcases"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Available for software engineering projects, collaborations, and portfolio reviews.",
+    "body": "I am strongest when the work combines practical software, clear user flows, and enough creative space to make the final experience memorable.",
+    "emailPrefix": "Email",
+    "githubLabel": "GitHub"
+  }
+}

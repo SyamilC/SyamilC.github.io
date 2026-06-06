@@ -1,12 +1,4 @@
-import { profile } from "../data/portfolio";
-
-const navItems = [
-  { label: "Work", href: "#work" },
-  { label: "Design", href: "#design" },
-  { label: "Skills", href: "#skills" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+import { profile, siteCopy } from "../data/portfolio";
 
 export function SiteHeader() {
   return (
@@ -17,7 +9,7 @@ export function SiteHeader() {
       </a>
 
       <nav className="site-nav" aria-label="Primary navigation">
-        {navItems.map((item) => (
+        {siteCopy.nav.map((item) => (
           <a href={item.href} key={item.href}>
             {item.label}
           </a>
@@ -25,7 +17,7 @@ export function SiteHeader() {
       </nav>
 
       <a className="header-cta" href={`mailto:${profile.email}`}>
-        Email
+        {siteCopy.contact.emailPrefix}
       </a>
     </header>
   );

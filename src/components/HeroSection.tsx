@@ -1,10 +1,10 @@
-import { profile, stats } from "../data/portfolio";
+import { profile, siteCopy, stats } from "../data/portfolio";
 
 export function HeroSection() {
   return (
     <section className="hero-section" id="top" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="eyebrow">Hi! I am</p>
+        <p className="eyebrow">{siteCopy.hero.eyebrow}</p>
         <h1 id="hero-title">{profile.name}</h1>
         <p className="hero-role">{profile.primaryRole}</p>
         <p className="hero-lede">{profile.headline}</p>
@@ -17,19 +17,19 @@ export function HeroSection() {
 
         <div className="hero-actions">
           <a className="button button-primary" href="#work">
-            View project categories
+            {siteCopy.hero.primaryAction}
           </a>
           <a className="button button-secondary" href={`mailto:${profile.email}`}>
-            Contact me
+            {siteCopy.hero.secondaryAction}
           </a>
         </div>
       </div>
 
-      <aside className="hero-brief" aria-label="Portfolio direction">
-        <p className="card-kicker">Portfolio focus</p>
-        <h2>Practical builds first. Creative range second.</h2>
+      <aside className="hero-brief" aria-label={siteCopy.hero.briefAriaLabel}>
+        <p className="card-kicker">{siteCopy.hero.briefKicker}</p>
+        <h2>{siteCopy.hero.briefTitle}</h2>
         <p>{profile.summary}</p>
-        <div className="brief-grid" aria-label="Portfolio signals">
+        <div className="brief-grid" aria-label={siteCopy.hero.statsAriaLabel}>
           {stats.map((stat) => (
             <div key={stat.label}>
               <strong>{stat.value}</strong>

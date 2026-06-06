@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Programming",
+    "skills": ["Java", "C++", "C#", "C", "Python", "GDScript", "HTML", "CSS", "JavaScript"]
+  },
+  {
+    "title": "Web & Software",
+    "skills": ["React", "TypeScript", "GitHub", "Firebase", "Supabase", "Testing"]
+  },
+  {
+    "title": "Game & Creative Tools",
+    "skills": ["Godot", "Unity", "Itch.io", "Figma", "Canva", "Adobe Illustrator", "CapCut"]
+  },
+  {
+    "title": "Languages",
+    "skills": ["Malay - native", "English - C2", "French - A2"]
+  }
+]

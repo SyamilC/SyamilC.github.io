@@ -1,13 +1,13 @@
-import { skillGroups } from "../data/portfolio";
+import { siteCopy, skillGroups } from "../data/portfolio";
 import { SectionHeading } from "./SectionHeading";
 
 export function SkillsSection() {
   return (
     <section className="page-section skills-section" id="skills">
       <SectionHeading
-        eyebrow="Technical inventory"
-        title="Tools I can connect to visible work."
-        summary="The skill list is grouped by how the portfolio is meant to grow: source code, app platforms, game systems, and visual production."
+        eyebrow={siteCopy.sections.skills.eyebrow}
+        title={siteCopy.sections.skills.title}
+        summary={siteCopy.sections.skills.summary}
       />
 
       <div className="skills-grid">

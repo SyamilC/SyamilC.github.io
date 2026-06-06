@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Software Engineering",
+    "kicker": "Primary direction",
+    "summary": "Build interfaces, app logic, project structures, and delivery flows that can keep growing after the first version works.",
+    "capabilities": ["React", "TypeScript", "Java", "Python", "Firebase", "Supabase"]
+  },
+  {
+    "title": "Game Development",
+    "kicker": "Playable systems",
+    "summary": "Prototype browser games, game-jam ideas, simulation rules, feedback loops, and lightweight web-playable releases.",
+    "capabilities": ["Godot", "Unity", "GDScript", "C++", "C#", "Itch.io"]
+  },
+  {
+    "title": "Graphic Design",
+    "kicker": "Visual clarity",
+    "summary": "Shape event publicity, presentation visuals, layouts, posters, and brand systems that support the message.",
+    "capabilities": ["Figma", "Canva", "Illustrator", "CapCut", "Layouts", "Brand systems"]
+  },
+  {
+    "title": "Delivery & Leadership",
+    "kicker": "Team output",
+    "summary": "Coordinate multimedia work, document decisions, and help creative teams turn rough plans into shipped artifacts.",
+    "capabilities": ["Planning", "Documentation", "Publicity", "Communication"]
+  }
+]
