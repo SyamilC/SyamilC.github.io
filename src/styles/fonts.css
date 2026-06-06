@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Rocket Rinder";
+  src: url("../../Assets/RocketRinder-yV5d.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Revamped";
+  src: url("../../Assets/Revamped-X3q1a.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neon Future";
+  src: url("../../Assets/NeonFuture20Demo-L3jp3.otf") format("opentype");
+  font-display: swap;
+}

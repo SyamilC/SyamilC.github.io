@@ -1,83 +1,73 @@
-import "./App.css";
-
-type Project = {
-  title: string;
-  description: string;
-  tags: string[];
-};
-
-const projects: Project[] = [
-  {
-    title: "Taskomon",
-    description:
-      "A productivity web app with floating task bubbles and an AI pet assistant.",
-    tags: ["React", "TypeScript", "AI", "Productivity"],
-  },
-  {
-    title: "Creature Simulator",
-    description:
-      "A cellular ecosystem simulation with emergent behavior and creature interactions.",
-    tags: ["C++", "Simulation", "Game Dev"],
-  },
-  {
-    title: "Drone4Dengue Testing",
-    description:
-      "A software testing project involving test design, automation, and test reporting.",
-    tags: ["Testing", "Selenium", "Documentation"],
-  },
-];
+import { useEffect, useMemo, useState } from "react";
+import { ContactSection } from "./components/ContactSection";
+import { FocusSection } from "./components/FocusSection";
+import { GraphicDesignGallery } from "./components/GraphicDesignGallery";
+import { HeroSection } from "./components/HeroSection";
+import { ProjectShowcasePage } from "./components/ProjectShowcasePage";
+import { ProjectsSection } from "./components/ProjectsSection";
+import { SiteHeader } from "./components/SiteHeader";
+import { SkillsSection } from "./components/SkillsSection";
+import { TimelineSection } from "./components/TimelineSection";
+import { profile } from "./data/portfolio";
+import "./styles/app.css";
 
 function App() {
+  const [hash, setHash] = useState(() => window.location.hash);
+  const projectSlug = useMemo(() => getProjectSlug(hash), [hash]);
+
+  useEffect(() => {
+    const onHashChange = () => setHash(window.location.hash);
+
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (projectSlug) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const targetId = hash.replace("#", "");
+    if (!targetId) {
+      return;
+    }
+
+    window.setTimeout(() => {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+  }, [hash, projectSlug]);
+
   return (
-    <main className="page">
-      <section className="hero">
-        <p className="eyebrow">Portfolio</p>
-        <h1>Hi, I&apos;m Syamil Asyraf.</h1>
-        <p className="intro">
-          I build web apps, games, simulations, and creative software projects.
-        </p>
+    <div className="app-shell">
+      <SiteHeader />
+      {projectSlug ? <ProjectShowcasePage slug={projectSlug} /> : <HomePage />}
+      <footer className="site-footer">
+        <span>{profile.name}</span>
+        <span>{profile.primaryRole}</span>
+        <span>{profile.location}</span>
+      </footer>
+    </div>
+  );
+}
 
-        <div className="heroActions">
-          <a href="#projects" className="primaryButton">
-            View Projects
-          </a>
-          <a href="mailto:syamilasyrafmaj@gmail.com" className="secondaryButton">
-            Contact Me
-          </a>
-        </div>
-      </section>
-
-      <section className="section">
-        <h2>About</h2>
-        <p>
-          I am interested in software development, game systems, simulations,
-          testing, and creative interactive projects. This portfolio collects my
-          selected work and experiments.
-        </p>
-      </section>
-
-      <section id="projects" className="section">
-        <h2>Projects</h2>
-
-        <div className="projectGrid">
-          {projects.map((project) => (
-            <article className="projectCard" key={project.title}>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-
-              <div className="tagList">
-                {project.tags.map((tag) => (
-                  <span className="tag" key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+function HomePage() {
+  return (
+    <main>
+      <HeroSection />
+      <ProjectsSection />
+      <GraphicDesignGallery />
+      <SkillsSection />
+      <FocusSection />
+      <TimelineSection />
+      <ContactSection />
     </main>
   );
+}
+
+function getProjectSlug(hash: string) {
+  const match = hash.match(/^#\/projects\/([a-z0-9-]+)$/);
+  return match?.[1];
 }
 
 export default App;
