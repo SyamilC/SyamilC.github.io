@@ -7,10 +7,13 @@ import timelineContent from "../content/timeline.json";
 
 export type LinkItem = {
   label: string;
-  href: string;
+  href?: string;
+  downloadKey?: "holowedApk" | "resume";
 };
 
 export type ProjectCategory = string;
+
+export type ProjectPriority = "primary" | "secondary";
 
 export type ProjectCategoryInfo = {
   title: ProjectCategory;
@@ -31,7 +34,12 @@ export type Project = {
   features: string[];
   process: string[];
   nextSteps: string[];
-  primaryLink: LinkItem;
+  primaryLink?: LinkItem;
+  priority?: ProjectPriority;
+  tags?: string[];
+  imageGroup?: string;
+  galleryKey?: "photography";
+  galleryNote?: string;
 };
 
 export type FocusArea = {

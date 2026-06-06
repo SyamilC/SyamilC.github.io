@@ -2,15 +2,15 @@
   "categories": [
     {
       "title": "Software Engineering",
-      "description": "Repository-backed apps and applied software projects where the implementation is the main proof."
+      "description": "Web application, Mobile Application, Machine Learning Models, and more"
     },
     {
       "title": "Game Development",
       "description": "Playable browser games and alpha builds published on itch.io."
     },
     {
-      "title": "Simulation & Other",
-      "description": "Experiments, catalogues, and creative technical work that do not fit a normal app/game category."
+      "title": "Other",
+      "description": "Simulation, catalogue, photography, and creative technical work."
     }
   ],
   "projects": [
@@ -19,16 +19,15 @@
       "title": "Taskomon",
       "category": "Software Engineering",
       "year": "2026",
-      "status": "Repository showcase",
+      "status": "Repository Web App",
       "role": "Frontend engineering, product UI, interaction systems",
       "summary": "A productivity web app built around task bubbles, a companion assistant, and playful task-management feedback.",
-      "practicalFocus": "Shows how a practical productivity app can become more engaging through visible task states, fast scanning, and lightweight personality.",
+      "practicalFocus": "Shows how a practical productivity app can become more engaging through visible task states, fast scanning, and personality.",
       "proofPoints": [
-        "Local screenshots are included for the project page.",
-        "The main project link points directly to the GitHub repository.",
-        "The interface is designed around quick action instead of long checklist management."
+
       ],
-      "stack": ["React", "TypeScript", "Productivity UX", "AI assistant concept"],
+      "stack": ["React", "TypeScript", "Productivity UX", "Proof of Concept"],
+      "tags": ["Web App", "Software Engineering", "Prototype"],
       "features": [
         "Task bubble interface for quick visual scanning",
         "Assistant-focused motivation layer",
@@ -55,16 +54,14 @@
       "title": "Red Flagger",
       "category": "Software Engineering",
       "year": "2026",
-      "status": "Repository showcase",
-      "role": "Software engineering, applied ML concept, interface planning",
-      "summary": "A software engineering project focused on detecting and surfacing red-flag patterns through a practical application workflow.",
-      "practicalFocus": "Shows applied software thinking: input, analysis, interpretation, and a result that can guide a user's next decision.",
+      "status": "Machine Learning Model",
+      "role": "Software engineering, and applied ML concept",
+      "summary": "A collaborative software engineering project focused on detecting and surfacing red-flag patterns among OKCupid profiles datasets.",
+      "practicalFocus": "A collaborative software engineering project focused on detecting and surfacing red-flag patterns among OKCupid profiles datasets.",
       "proofPoints": [
-        "The main project link points directly to the GitHub repository.",
-        "The showcase is structured for future screenshots, model notes, and evaluation details.",
-        "The project supports the software-engineering side of the portfolio."
       ],
-      "stack": ["Python", "Machine learning", "Software engineering", "Interface planning"],
+      "stack": ["Python", "Machine learning", "Software engineering"],
+      "tags": ["Primary", "Collaborative", "Applied ML"],
       "features": [
         "Detection-oriented workflow",
         "Result-focused user experience",
@@ -87,20 +84,88 @@
       }
     },
     {
+      "slug": "finzen",
+      "title": "FinZen",
+      "category": "Software Engineering",
+      "year": "2026",
+      "status": "Collaborative course project",
+      "role": "Software engineering, Finance App",
+      "summary": "A collaborative finance-focused software engineering project for course work.",
+      "practicalFocus": "A collaborative finance-focused software engineering project for course work",
+      "proofPoints": [
+      ],
+      "stack": ["Software engineering", "Finance workflow", "Team project"],
+      "tags": ["Collaborative", "Course Project"],
+      "priority": "secondary",
+      "features": [
+        "Finance-app project framing",
+        "Collaborator-owned repository link",
+        "Lower-priority supporting showcase",
+        "Screenshot-backed project page"
+      ],
+      "process": [
+        "Positioned the work as a supporting team project.",
+        "Kept the public page focused on visible evidence and repository access.",
+        "Prepared the showcase to expand with role notes later."
+      ],
+      "nextSteps": [
+        "Add role-specific contribution notes.",
+        "Add more screenshots when available.",
+        "Document the user workflow and technical structure."
+      ],
+      "primaryLink": {
+        "label": "Open GitHub repository",
+        "href": "https://github.com/fatinauni02-coder/FinZen"
+      }
+    },
+    {
+      "slug": "holowed",
+      "title": "Holowed",
+      "category": "Software Engineering",
+      "year": "2025",
+      "status": "Course project Mobile AR app",
+      "role": "Software engineering, Android build, course collaboration, 3-D Modelling",
+      "summary": "A mobile app showcasing traditional wedding ceremony.",
+      "practicalFocus": "A mobile app showcasing traditional wedding ceremony.",
+      "proofPoints": [
+      ],
+      "stack": ["Android APK", "Software engineering", "Course project", "Mobile delivery"],
+      "tags": ["Course Project", "APK"],
+      "priority": "secondary",
+      "features": [
+        "Direct APK download",
+        "Course-project positioning",
+        "Mobile software delivery signal",
+        "Prepared showcase structure"
+      ],
+      "process": [
+        "Kept the main action as a download because there is no external redirect.",
+        "Positioned the project as supporting evidence below the primary portfolio work.",
+        "Prepared the project page for future screenshots and explanation."
+      ],
+      "nextSteps": [
+        "Add Android screenshots.",
+        "Add a concise role and contribution breakdown.",
+        "Document setup notes or device requirements."
+      ],
+      "primaryLink": {
+        "label": "Download APK",
+        "downloadKey": "holowedApk"
+      }
+    },
+    {
       "slug": "while-play-tower-defense",
       "title": "While Play Tower Defense",
       "category": "Game Development",
-      "year": "2026",
+      "year": "2025",
       "status": "Playable itch.io build",
-      "role": "Game design, gameplay systems, web build",
-      "summary": "A playable tower-defense game released on itch.io with local screenshots available for the showcase page.",
-      "practicalFocus": "Shows playable game output: rules, waves, placement decisions, feedback, and a published web build.",
+      "role": "Game design, gameplay systems, web build, app",
+      "summary": "Plan your defense and create a while loop of action for each of your function towers to defend against wild creatures....or are they?",
+      "practicalFocus": "Plan your defense and create a while loop of action for each of your function towers to defend against wild creatures....or are they?",
       "proofPoints": [
-        "Local screenshots are included for the project page.",
-        "The main project link points directly to the itch.io release.",
-        "The project demonstrates game-loop design rather than only a concept screen."
       ],
       "stack": ["Game design", "Tower defense", "Web build", "Itch.io"],
+      "tags": ["Playable", "Game"],
       "features": [
         "Tower-defense loop",
         "Wave and placement decision space",
@@ -126,17 +191,15 @@
       "slug": "kingdom-of-gluttony-alpha",
       "title": "Kingdom of Gluttony Alpha",
       "category": "Game Development",
-      "year": "2026",
+      "year": "2025",
       "status": "Playable alpha",
-      "role": "Game design, prototype direction, web release",
-      "summary": "An alpha web game released on itch.io with local screenshots prepared for the portfolio showcase.",
-      "practicalFocus": "Shows a game project moving beyond ideation into an alpha release that visitors can open and test.",
+      "role": "Game design, prototype",
+      "summary": "A gluttonous deck builder, rogue-like card game where you play as a hog king and your army of stocky, hungry creatures must protect the castle from waves of growing threats.",
+      "practicalFocus": "A gluttonous deck builder, rogue-like card game where you play as a hog king and your army of stocky, hungry creatures must protect the castle from waves of growing threats.",
       "proofPoints": [
-        "Local screenshots are included for the project page.",
-        "The main project link points directly to the itch.io alpha.",
-        "The project page is prepared for future mechanics and level-design notes."
       ],
       "stack": ["Game prototype", "Web game", "Itch.io", "Alpha build"],
+      "tags": ["Playable", "Alpha"],
       "features": [
         "Playable alpha build",
         "Web-accessible project page",
@@ -162,17 +225,15 @@
       "slug": "jumpy-beaw",
       "title": "Jumpy Beaw",
       "category": "Game Development",
-      "year": "2026",
+      "year": "2025/6",
       "status": "Playable itch.io build",
-      "role": "Game design, prototype build, web release",
-      "summary": "A web-playable game released on itch.io with local images included for the project showcase.",
-      "practicalFocus": "Shows the ability to finish and publish a small playable game with a clear interaction loop.",
+      "role": "Game Release",
+      "summary": "In-development game about jumping bear.",
+      "practicalFocus": "In-development game about jumping bear.",
       "proofPoints": [
-        "Local screenshots are included for the project page.",
-        "The main project link points directly to the itch.io release.",
-        "The project supports the game-development side of the portfolio."
       ],
       "stack": ["Game prototype", "Platformer", "Web build", "Itch.io"],
+      "tags": ["Playable", "Game"],
       "features": [
         "Small playable game loop",
         "Browser-accessible release",
@@ -197,22 +258,21 @@
     {
       "slug": "pixel-particle",
       "title": "Pixel Particle",
-      "category": "Simulation & Other",
-      "year": "2026",
-      "status": "Playable itch.io build",
+      "category": "Other",
+      "year": "2024/5",
+      "status": "Runable itch.io build",
       "role": "Simulation design, interaction experiment",
-      "summary": "A particle simulation / interaction experiment published on itch.io.",
-      "practicalFocus": "Shows experimentation with visual systems, motion, particles, and lightweight interactive simulation.",
+      "summary": "A particle simulation and interaction experiment published on itch.io.",
+      "practicalFocus": "A particle simulation and interaction experiment published on itch.io.",
       "proofPoints": [
-        "The main project link points directly to the itch.io page.",
-        "The portfolio omits screenshots until local images are added.",
-        "The project broadens the portfolio beyond standard app screens."
+
       ],
       "stack": ["Simulation", "Particles", "Interactive systems", "Itch.io"],
+      "tags": ["Simulation", "Interactive"],
       "features": [
         "Particle-focused interaction",
         "Published itch.io page",
-        "Simulation/other category placement",
+        "Other category placement",
         "Prepared project page for future captures"
       ],
       "process": [
@@ -233,18 +293,16 @@
     {
       "slug": "score-catalogue",
       "title": "Score Catalogue",
-      "category": "Simulation & Other",
-      "year": "2026",
+      "category": "Other",
+      "year": "2021-2026",
       "status": "Itch.io project",
-      "role": "Tool/concept build, catalogue interface",
-      "summary": "A catalogue-style project published on itch.io under ChubbyMeel.",
-      "practicalFocus": "Shows an interest in organizing creative/game-adjacent material into a usable browsable format.",
+      "role": "Musical Catalogue",
+      "summary": "Catalogue of Music Scores written by me.",
+      "practicalFocus": "Catalogue of Music Scores written by me.",
       "proofPoints": [
-        "The main project link points directly to the itch.io page.",
-        "The portfolio omits screenshots until local images are added.",
-        "The project rounds out the other/tools side of the work section."
       ],
       "stack": ["Catalogue UI", "Creative tooling", "Itch.io", "Documentation"],
+      "tags": ["Catalogue", "Other"],
       "features": [
         "Catalogue-oriented presentation",
         "External project link",
@@ -265,6 +323,40 @@
         "label": "Open on itch.io",
         "href": "https://chubbymeel.itch.io/chubbymeels-score-catalogue"
       }
+    },
+    {
+      "slug": "photography",
+      "title": "Photography",
+      "category": "Other",
+      "year": "2024-2026",
+      "status": "Photography gallery",
+      "role": "Photography",
+      "summary": "Photography",
+      "practicalFocus": "Photography Gallery",
+      "proofPoints": [
+        "All photographs shown here were taken with consent."
+      ],
+      "stack": ["Photography", "Composition", "Visual direction"],
+      "tags": ["Photography"],
+      "priority": "secondary",
+      "galleryKey": "photography",
+      "galleryNote": "All photographs shown here were taken with consent.",
+      "features": [
+        "Automatically generated image gallery",
+        "Consent note included on the showcase page",
+        "Lightweight supporting creative category",
+        "No captions required under individual images"
+      ],
+      "process": [
+        "Kept the showcase visual-first so the photos carry the section.",
+        "Placed the work under Other so it supports, rather than competes with, software engineering.",
+        "Prepared the folder-based structure so new photos can be added easily."
+      ],
+      "nextSteps": [
+        "Add more selected photography work to the folder.",
+        "Create smaller optimized image versions if page weight becomes an issue.",
+        "Add date or event groupings only if you want more editorial structure."
+      ]
     }
   ]
 }

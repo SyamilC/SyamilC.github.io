@@ -1,3 +1,4 @@
+import { downloads } from "../data/assetManifest";
 import { profile, siteCopy } from "../data/portfolio";
 
 export function ContactSection() {
@@ -15,6 +16,9 @@ export function ContactSection() {
         </a>
         <a className="button button-secondary" href={profile.github} target="_blank" rel="noreferrer">
           {siteCopy.contact.githubLabel}
+        </a>
+        <a className="button button-secondary" href={downloads.resume} download>
+          {siteCopy.contact.resumeLabel}
         </a>
       </div>
     </section>

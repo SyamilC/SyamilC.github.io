@@ -29,11 +29,19 @@ export function ProjectsSection() {
 
               <div className="project-grid">
                 {categoryProjects.map((project) => {
-                  const [coverImage] = projectImages[project.slug] ?? [];
+                  const [coverImage] = projectImages[project.imageGroup ?? project.slug] ?? [];
+                  const isSecondary = project.priority === "secondary";
+                  const cardClassName = [
+                    "project-card",
+                    isSecondary ? "project-card-secondary" : "",
+                    coverImage ? "" : "project-card-no-image",
+                  ]
+                    .filter(Boolean)
+                    .join(" ");
 
                   return (
                     <a
-                      className="project-card"
+                      className={cardClassName}
                       href={`#/projects/${project.slug}`}
                       key={project.slug}
                       aria-label={`Open ${project.title} showcase`}
@@ -42,6 +50,14 @@ export function ProjectsSection() {
                         <p className="card-kicker">{project.status}</p>
                         <span>{project.year}</span>
                       </div>
+
+                      {project.tags && project.tags.length > 0 ? (
+                        <ul className="project-tag-list" aria-label={`${project.title} tags`}>
+                          {project.tags.map((tag) => (
+                            <li key={tag}>{tag}</li>
+                          ))}
+                        </ul>
+                      ) : null}
 
                       {coverImage ? (
                         <img className="project-card-image" src={coverImage.src} alt={coverImage.alt} />

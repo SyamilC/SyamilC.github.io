@@ -1,5 +1,6 @@
-import { projectImages } from "../data/assetManifest";
-import { profile, projects, siteCopy } from "../data/portfolio";
+import { photographyGallery, projectImages } from "../data/assetManifest";
+import { isDownloadLink, resolveLink } from "../data/linkResolver";
+import { projects, siteCopy, type LinkItem } from "../data/portfolio";
 
 type ProjectShowcasePageProps = {
   slug: string;
@@ -23,11 +24,11 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
     );
   }
 
-  const images = projectImages[project.slug] ?? [];
-  const relatedProjects = projects
-    .filter((item) => item.category === project.category && item.slug !== project.slug)
-    .slice(0, 2);
-
+  const isPhotographyGallery = project.galleryKey === "photography";
+  const images = isPhotographyGallery
+    ? photographyGallery
+    : (projectImages[project.imageGroup ?? project.slug] ?? []);
+  const primaryHref = resolveLink(project.primaryLink);
   return (
     <main className="project-page">
       <a className="back-link" href="#work">
@@ -38,16 +39,25 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
         <div>
           <p className="eyebrow">{project.category}</p>
           <h1>{project.title}</h1>
+          {project.tags && project.tags.length > 0 ? (
+            <ul className="project-page-tag-list" aria-label={`${project.title} tags`}>
+              {project.tags.map((tag) => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul>
+          ) : null}
           <p>{project.summary}</p>
+          {primaryHref ? (
+            <div className="project-hero-actions" aria-label={`${project.title} actions`}>
+              <ProjectLink className="button button-primary" link={project.primaryLink} />
+              <a className="button button-secondary" href="#work">
+                {siteCopy.projectPage.backLink}
+              </a>
+            </div>
+          ) : null}
         </div>
 
         <aside className="project-facts" aria-label={`${project.title} facts`}>
-          <div className="primary-project-link">
-            <span>{siteCopy.projectPage.mainProjectLink}</span>
-            <a href={project.primaryLink.href} target="_blank" rel="noreferrer">
-              {project.primaryLink.label}
-            </a>
-          </div>
           <div>
             <span>{siteCopy.projectPage.role}</span>
             <strong>{project.role}</strong>
@@ -64,68 +74,25 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
       </section>
 
       {images.length > 0 ? (
-        <section className="showcase-gallery" aria-labelledby="showcase-gallery-heading">
+        <section
+          className={`showcase-gallery${isPhotographyGallery ? " showcase-gallery-photography" : ""}`}
+          aria-labelledby="showcase-gallery-heading"
+        >
           <div className="showcase-gallery-head">
-            <p className="eyebrow">{siteCopy.projectPage.visualProof}</p>
+            <p className="eyebrow">
+              {isPhotographyGallery ? siteCopy.projectPage.galleryProof : siteCopy.projectPage.visualProof}
+            </p>
             <h2 id="showcase-gallery-heading">
-              {project.title} {siteCopy.projectPage.screenshotsSuffix}
+              {isPhotographyGallery ? `${project.title} gallery` : `${project.title} ${siteCopy.projectPage.screenshotsSuffix}`}
             </h2>
+            {project.galleryNote ? <p className="gallery-note">{project.galleryNote}</p> : null}
           </div>
           <div className="showcase-image-grid">
             {images.map((image, index) => (
-              <figure className={index === 0 ? "showcase-image-main" : undefined} key={image.src}>
-                <img src={image.src} alt={image.alt} />
-                <figcaption>{image.title}</figcaption>
+              <figure className={!isPhotographyGallery && index === 0 ? "showcase-image-main" : undefined} key={image.src}>
+                <img src={image.src} alt={image.alt} decoding="async" loading={index < 6 ? "eager" : "lazy"} />
+                {!isPhotographyGallery ? <figcaption>{image.title}</figcaption> : null}
               </figure>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      <section className="showcase-note showcase-note-wide">
-        <p className="card-kicker">{siteCopy.projectPage.practicalFocus}</p>
-        <h2>{project.practicalFocus}</h2>
-        <ul className="proof-list">
-          {project.proofPoints.map((point) => (
-            <li key={point}>{point}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="project-detail-grid" aria-label={`${project.title} details`}>
-        <DetailPanel title={siteCopy.projectPage.detailPanels.features} items={project.features} />
-        <DetailPanel title={siteCopy.projectPage.detailPanels.process} items={project.process} />
-        <DetailPanel title={siteCopy.projectPage.detailPanels.nextSteps} items={project.nextSteps} />
-      </section>
-
-      <section className="tool-panel" aria-label={`${project.title} stack`}>
-        <p className="card-kicker">{siteCopy.projectPage.toolsAndStack}</p>
-        <ul className="chip-list">
-          {project.stack.map((tool) => (
-            <li key={tool}>{tool}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="project-actions" aria-label={`${project.title} links`}>
-        <a className="button button-primary" href={project.primaryLink.href} target="_blank" rel="noreferrer">
-          {project.primaryLink.label}
-        </a>
-        <a className="button button-secondary" href={`mailto:${profile.email}?subject=${project.title}`}>
-          {siteCopy.projectPage.askProject}
-        </a>
-      </section>
-
-      {relatedProjects.length > 0 ? (
-        <section className="related-projects" aria-labelledby="related-heading">
-          <p className="eyebrow">{siteCopy.projectPage.relatedEyebrow}</p>
-          <h2 id="related-heading">{siteCopy.projectPage.relatedTitle}</h2>
-          <div className="related-grid">
-            {relatedProjects.map((related) => (
-              <a href={`#/projects/${related.slug}`} key={related.slug}>
-                <span>{related.category}</span>
-                <strong>{related.title}</strong>
-              </a>
             ))}
           </div>
         </section>
@@ -134,15 +101,24 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
   );
 }
 
-function DetailPanel({ title, items }: { title: string; items: string[] }) {
+function ProjectLink({ className, link }: { className?: string; link?: LinkItem }) {
+  const href = resolveLink(link);
+
+  if (!link || !href) {
+    return null;
+  }
+
+  if (isDownloadLink(link)) {
+    return (
+      <a className={className} href={href} download>
+        {link.label}
+      </a>
+    );
+  }
+
   return (
-    <article className="detail-panel">
-      <h2>{title}</h2>
-      <ul className="proof-list">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </article>
+    <a className={className} href={href} target="_blank" rel="noreferrer">
+      {link.label}
+    </a>
   );
 }

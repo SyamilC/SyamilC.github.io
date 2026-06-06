@@ -4,11 +4,14 @@ export type ImageAsset = {
   title: string;
 };
 
-const projectImageModules = import.meta.glob("../assets/{Taskomon,While Play TD,Kingdom of Gluttony,Jumpy Beaw}/*.{png,jpg,jpeg,webp}", {
-  eager: true,
-  import: "default",
-  query: "?url",
-}) as Record<string, string>;
+const projectImageModules = import.meta.glob(
+  "../assets/{Taskomon,While Play TD,Kingdom of Gluttony,Jumpy Beaw,Finzen}/*.{png,jpg,jpeg,webp}",
+  {
+    eager: true,
+    import: "default",
+    query: "?url",
+  },
+) as Record<string, string>;
 
 const designImageModules = import.meta.glob("../assets/GD/*.{png,jpg,jpeg,webp}", {
   eager: true,
@@ -16,7 +19,14 @@ const designImageModules = import.meta.glob("../assets/GD/*.{png,jpg,jpeg,webp}"
   query: "?url",
 }) as Record<string, string>;
 
+const photographyImageModules = import.meta.glob("../assets/Photography/*.{png,jpg,jpeg,webp,JPG,JPEG,PNG,WEBP}", {
+  eager: true,
+  import: "default",
+  query: "?url",
+}) as Record<string, string>;
+
 const projectFolders = {
+  finzen: "Finzen",
   "jumpy-beaw": "Jumpy Beaw",
   "kingdom-of-gluttony-alpha": "Kingdom of Gluttony",
   taskomon: "Taskomon",
@@ -34,6 +44,15 @@ export const projectImages = Object.fromEntries(
 ) as Record<string, ImageAsset[]>;
 
 export const graphicDesignGallery = filesFromFolder(designImageModules, "GD");
+export const photographyGallery = filesFromFolder(photographyImageModules, "Photography").map((asset) => ({
+  ...asset,
+  alt: `${asset.title} photography work by Syamil Asyraf Bin Mohd Ali Jaafar`,
+}));
+
+export const downloads = {
+  holowedApk: new URL("../downloadable/HaloWedDownload.apk", import.meta.url).href,
+  resume: new URL("../downloadable/RESUME SYAMIL ASYRAF BIN MOHD ALI JAAFAR (2).pdf", import.meta.url).href,
+};
 
 function filesFromFolder(modules: Record<string, string>, folder: string) {
   return Object.entries(modules)

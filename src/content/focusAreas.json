@@ -1,26 +1,26 @@
 [
   {
     "title": "Software Engineering",
-    "kicker": "Primary direction",
-    "summary": "Build interfaces, app logic, project structures, and delivery flows that can keep growing after the first version works.",
-    "capabilities": ["React", "TypeScript", "Java", "Python", "Firebase", "Supabase"]
+    "kicker": "Software Development Cycle",
+    "summary": "Web application, Mobile Application, Machine Learning Models, and more",
+    "capabilities": ["React", "TypeScript", "Java", "Python", "Firebase", "Supabase", "C++"]
   },
   {
     "title": "Game Development",
-    "kicker": "Playable systems",
-    "summary": "Prototype browser games, game-jam ideas, simulation rules, feedback loops, and lightweight web-playable releases.",
-    "capabilities": ["Godot", "Unity", "GDScript", "C++", "C#", "Itch.io"]
+    "kicker": "Game Development Cycle",
+    "summary": "Browser games, Game-jam submissions, and Released Products.",
+    "capabilities": ["Godot", "Unity", "GDScript", "C#", "Itch.io"]
   },
   {
     "title": "Graphic Design",
-    "kicker": "Visual clarity",
-    "summary": "Shape event publicity, presentation visuals, layouts, posters, and brand systems that support the message.",
+    "kicker": "Visual Creativity",
+    "summary": "Shape event publicity, presentation visuals, layouts, posters, merch, and branding.",
     "capabilities": ["Figma", "Canva", "Illustrator", "CapCut", "Layouts", "Brand systems"]
   },
   {
     "title": "Delivery & Leadership",
     "kicker": "Team output",
-    "summary": "Coordinate multimedia work, document decisions, and help creative teams turn rough plans into shipped artifacts.",
+    "summary": "Coordinate multimedia work, document decisions, and help teams turn rough plans into shipped products.",
     "capabilities": ["Planning", "Documentation", "Publicity", "Communication"]
   }
 ]
