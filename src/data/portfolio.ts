@@ -8,7 +8,7 @@ import timelineContent from "../content/timeline.json";
 export type LinkItem = {
   label: string;
   href?: string;
-  downloadKey?: "holowedApk" | "resume";
+  downloadKey?: "resume";
 };
 
 export type ProjectCategory = string;
@@ -35,6 +35,7 @@ export type Project = {
   process: string[];
   nextSteps: string[];
   primaryLink?: LinkItem;
+  secondaryLinks?: LinkItem[];
   priority?: ProjectPriority;
   tags?: string[];
   imageGroup?: string;

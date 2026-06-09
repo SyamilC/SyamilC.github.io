@@ -84,6 +84,46 @@
       }
     },
     {
+      "slug": "ecoswap",
+      "title": "EcoSwap",
+      "category": "Software Engineering",
+      "year": "2026",
+      "status": "Collaborative web app",
+      "role": "Software engineering, collaborative product build",
+      "summary": "A collaborative web app for university students to swap item for item instead of buying new.",
+      "practicalFocus": "A collaborative web app for university students to swap item for item instead of buying new.",
+      "proofPoints": [
+      ],
+      "stack": ["Web app", "Item swapping", "Collaborative project", "Vercel"],
+      "tags": ["Collaborative", "Web App", "Software Engineering"],
+      "features": [
+        "Item-for-item swapping concept",
+        "University-student use case",
+        "Live Vercel deployment",
+        "Collaborator-owned repository link"
+      ],
+      "process": [
+        "Built around a practical student exchange scenario.",
+        "Focused the project around reusing items through direct swaps.",
+        "Prepared the showcase with both live app and repository access."
+      ],
+      "nextSteps": [
+        "Add more screenshots of the swapping flow.",
+        "Document individual contribution notes.",
+        "Add future notes on listing, matching, and trust features."
+      ],
+      "primaryLink": {
+        "label": "Open live app",
+        "href": "https://eco-swap-jade.vercel.app/"
+      },
+      "secondaryLinks": [
+        {
+          "label": "Open GitHub repository",
+          "href": "https://github.com/wikhing/EcoSwap"
+        }
+      ]
+    },
+    {
       "slug": "finzen",
       "title": "FinZen",
       "category": "Software Engineering",

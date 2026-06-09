@@ -28,7 +28,10 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
   const images = isPhotographyGallery
     ? photographyGallery
     : (projectImages[project.imageGroup ?? project.slug] ?? []);
-  const primaryHref = resolveLink(project.primaryLink);
+  const actionLinks = [project.primaryLink, ...(project.secondaryLinks ?? [])].filter(
+    (link): link is LinkItem => Boolean(resolveLink(link)),
+  );
+
   return (
     <main className="project-page">
       <a className="back-link" href="#work">
@@ -47,9 +50,15 @@ export function ProjectShowcasePage({ slug }: ProjectShowcasePageProps) {
             </ul>
           ) : null}
           <p>{project.summary}</p>
-          {primaryHref ? (
+          {actionLinks.length > 0 ? (
             <div className="project-hero-actions" aria-label={`${project.title} actions`}>
-              <ProjectLink className="button button-primary" link={project.primaryLink} />
+              {actionLinks.map((link, index) => (
+                <ProjectLink
+                  className={`button ${index === 0 ? "button-primary" : "button-secondary"}`}
+                  key={`${link.label}-${link.href ?? link.downloadKey}`}
+                  link={link}
+                />
+              ))}
               <a className="button button-secondary" href="#work">
                 {siteCopy.projectPage.backLink}
               </a>

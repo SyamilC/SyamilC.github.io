@@ -5,7 +5,7 @@ export type ImageAsset = {
 };
 
 const projectImageModules = import.meta.glob(
-  "../assets/{Taskomon,While Play TD,Kingdom of Gluttony,Jumpy Beaw,Finzen}/*.{png,jpg,jpeg,webp}",
+  "../assets/{Taskomon,While Play TD,Kingdom of Gluttony,Jumpy Beaw,Finzen,Red Flagger,EcoSwap}/*.{png,jpg,jpeg,webp}",
   {
     eager: true,
     import: "default",
@@ -26,9 +26,11 @@ const photographyImageModules = import.meta.glob("../assets/Photography/*.{png,j
 }) as Record<string, string>;
 
 const projectFolders = {
+  ecoswap: "EcoSwap",
   finzen: "Finzen",
   "jumpy-beaw": "Jumpy Beaw",
   "kingdom-of-gluttony-alpha": "Kingdom of Gluttony",
+  "red-flagger": "Red Flagger",
   taskomon: "Taskomon",
   "while-play-tower-defense": "While Play TD",
 };
@@ -50,7 +52,6 @@ export const photographyGallery = filesFromFolder(photographyImageModules, "Phot
 }));
 
 export const downloads = {
-  holowedApk: new URL("../downloadable/HaloWedDownload.apk", import.meta.url).href,
   resume: new URL("../downloadable/RESUME SYAMIL ASYRAF BIN MOHD ALI JAAFAR (2).pdf", import.meta.url).href,
 };
 
